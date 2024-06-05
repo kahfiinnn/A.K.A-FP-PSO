@@ -101,6 +101,7 @@ Prepare a project that DevOps wants to do further.
 
 ### Step 1 Download MongoDB
 1. Visit the website https://www.mongodb.com/try/download/community to download MongoDB
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/1d9ebcfd-c07b-4ed5-aab7-50b1ff9c9382)
 2. It is recommended to use version 6.0.15 because I cannot install the version above it
 3. Select the Windows platform and package msi
@@ -117,22 +118,37 @@ Prepare a project that DevOps wants to do further.
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/09832091-a362-4562-a748-972b35871675)
 
 7. Download MongoDB Shell on this website https://www.mongodb.com/try/download/shell
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/543bff88-1bb5-437a-8814-794808804351)
+
 8. Adjust as in the picture above
 9. Extract the file and put it in the same folder as the MongoDB file downloaded earlier (I put MongoDB Shell in C: and MongoDB in C:\Program Files\).
 10. Open edit the system environment variable
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/636e0cf1-c611-436a-8626-bce130f6882c)
+
 11. Select Environment Variables
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/f1500035-3ec7-4a33-97b8-c07277885a65)
+
 13. Double click at path
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/abda73cb-02c6-4831-89c3-ca62f5f6eb6e)
+
 14. Put the location the MongoDB Shell to path
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b9193519-1730-4efe-a69d-220dd0696f9f)
+
 15. write mongod --version to the terminal
+
 ![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b58240e2-21f5-4544-9199-609ea2db93b8)
 
-### Step 2 Create a Database in MongoDB
-1. 
+### Step 2 Create a Database in MongoDB Compass
+1. Open MongoDB Compass
+2. Click Connect
+3. Create Database
+4. Write your name Databsase and collection
+5. Click Create Collection
 
 ### Step 3 Clone and Run The Project
 
@@ -152,12 +168,17 @@ Prepare a project that DevOps wants to do further.
    ```sh
     npm install
     ```
-5. Run the project
+
+### Step 4 Put your Database name at .env 
+1. Open .env
+2. Put the Database name at MONGO_URL="mongodb://127.0.0.1:27017/(here)"
+
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/46718550-6f45-4591-a4ef-ff62646d1055)
+
+3. Run the project
    ```sh
     node app.js
-    ```
-
-### 
+    ``` 
 
 
 
