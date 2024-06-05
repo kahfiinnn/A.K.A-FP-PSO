@@ -99,9 +99,44 @@ Trinity App is a To Do List App to help you managae and track down your daily ac
 
 Prepare a project that DevOps wants to do further.
 
-### Step 1 Clone The Project
+### Step 1 Download MongoDB
+1. Visit the website https://www.mongodb.com/try/download/community to download MongoDB
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/1d9ebcfd-c07b-4ed5-aab7-50b1ff9c9382)
+2. It is recommended to use version 6.0.15 because I cannot install the version above it
+3. Select the Windows platform and package msi
+4. Let's download MongoDB
+5. Install MongoDB (Install MongoDB Compass)
 
-1. Navigate to the directory where you want to clone the project.
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/0a17d0b8-550a-4824-af92-9f456a5e19d2)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b2417bad-a3f0-4038-8356-ac899042dc59)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/6dbb6940-994b-4cd4-ab10-6b988c7595a9)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/78a29ccf-bdb8-45a2-be84-cf0ca5beed82)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/dfcbe241-2f09-46f9-9a8c-51c1975b455a)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/53228bab-6f22-4b51-9c84-23fe9b21202c)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/8d07a266-9630-4fce-8506-04069c347aac)
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/09832091-a362-4562-a748-972b35871675)
+
+7. Download MongoDB Shell on this website https://www.mongodb.com/try/download/shell
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/543bff88-1bb5-437a-8814-794808804351)
+8. Adjust as in the picture above
+9. Extract the file and put it in the same folder as the MongoDB file downloaded earlier (I put MongoDB Shell in C: and MongoDB in C:\Program Files\).
+10. Open edit the system environment variable
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/636e0cf1-c611-436a-8626-bce130f6882c)
+11. Select Environment Variables
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/f1500035-3ec7-4a33-97b8-c07277885a65)
+13. Double click at path
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/abda73cb-02c6-4831-89c3-ca62f5f6eb6e)
+14. Put the location the MongoDB Shell to path
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b9193519-1730-4efe-a69d-220dd0696f9f)
+15. write mongod --version to the terminal
+![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b58240e2-21f5-4544-9199-609ea2db93b8)
+
+### Step 2 Create a Database in MongoDB
+1. 
+
+### Step 3 Clone and Run The Project
+
+1. Navigate to the directory where you want to clone the project through the terminal
    ```sh
     cd path/to/your/directory
     ```
@@ -121,6 +156,8 @@ Prepare a project that DevOps wants to do further.
    ```sh
     node app.js
     ```
+
+### 
 
 
 
