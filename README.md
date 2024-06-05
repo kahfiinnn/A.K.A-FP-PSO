@@ -97,7 +97,37 @@ Trinity App is a To Do List App to help you managae and track down your daily ac
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+Prepare a project that DevOps wants to do further.
+
+### Step 1 Clone The Project
+
+1. Navigate to the directory where you want to clone the project.
+   ```sh
+    cd path/to/your/directory
+    ```
+2. Clone the repository using HTTPS
+   ```sh
+    git clone https://github.com/kahfiinnn/A.K.A-FP-PSO.git
+    ```
+3. Navigate into the cloned repository
+   ```sh
+    cd your-repository
+    ```
+4. Install dependencies
+   ```sh
+    npm install
+    ```
+5. Run the project
+   ```sh
+    node app.js
+    ```
+
+
+
+
+
+
+
 
 ### Prerequisites
 
