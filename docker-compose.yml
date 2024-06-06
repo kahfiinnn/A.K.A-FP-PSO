@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:4000' #mapping port [port host:port docker(dapet dari expose)]
