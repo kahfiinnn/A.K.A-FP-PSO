@@ -31,15 +31,6 @@
 
   <p align="center">
     Rediscover Your Lost Wheels with Ease!
-    <br />
-    <a href="https://github.com/laodeshaldanfalih/docker-trinity-app"><strong>Explore the repo »</strong></a>
-    <br />
-    <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -47,23 +38,14 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
+    <li>About The Project
+        <ul>
+        <li>Built With</li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li>Getting Started</li>
+    <li>Github Action</li>
+    <li>Docker</li>
   </ol>
 </details>
 
@@ -73,12 +55,12 @@
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Trinity App is a To Do List App to help you managae and track down your daily activities. This project is developed by
+A useful application for finding lost vehicles. We will do DevOps on this application. here are the members
 
 <ul>
-    <li><a href="https://github.com/afandamirza">Mirza</a></li>
-    <li><a href="https://github.com/ErawanFaqihIbrahim">Faqih</a></li>
-    <li><a href="https://github.com/laodeshaldanfalih">Shaldan</a></li>
+    <li><a href="https://github.com/arvindaffa">Arvin</a></li>
+    <li><a href="https://github.com/AvicennaSyeh">Avicenna</a></li>
+    <li><a href="https://github.com/kahfiinnn">Kahfin</a></li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -88,7 +70,6 @@ Trinity App is a To Do List App to help you managae and track down your daily ac
 -   [![Express.js][Express.js]][Express.js-url]
 -   [![Docker][Docker.com]][Docker-url]
 -   [![GitHub Actions][GitHubActions]][GitHubActions-url]
--   [![Jenkins][Jenkins.com]][Jenkins-url]
 -   [![MongoDB][MongoDB]][MongoDB-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -222,94 +203,10 @@ By organising the steps like this, it will be easier for users to understand the
    node app.js
     ```
 
-
-
-### Prerequisites
-
-You need to download and install some of these tools to run Trinity App locally o your machine:
-
--   Docker
-    visit docker official installation based on your machine: https://www.docker.com/products/docker-desktop/
-
-### Installation
-
-_After donwloading all prequities, you can follow this installation steps:_
-
-1. Clone the repo
-    ```sh
-    git clone https://github.com/laodeshaldanfalih/docker-trinity-app
-    ```
-2. Go to your clone directory
-    ```sh
-    cd ./yourCloneDirectory
-    ```
-3. Innitialize you docker images
-    ```sh
-    docker compose up
-    ```
+## Github Action
+## Docker
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-To look at the web view and database, you can type this line to your browser
-
-1. Run web view
-
-    ```sh
-    http://localhost/
-    ```
-
-2. Run database PhPMyAdmin view
-    ```sh
-    http://localhost:8080/
-    ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Coming soon...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-### Faqih - 5026211001@student.its.ac.id
-
-### Mirza - 5026211126@student.its.ac.id
-
-### Shaldan - 50262111178@student.its.ac.id
-
-Project Link: [https://github.com/laodeshaldanfalih/docker-trinity-app](https://github.com/laodeshaldanfalih/docker-trinity-app)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
