@@ -99,91 +99,128 @@ Trinity App is a To Do List App to help you managae and track down your daily ac
 
 Prepare a project that DevOps wants to do further.
 
-### Step 1 Download MongoDB
-1. Visit the website https://www.mongodb.com/try/download/community to download MongoDB
+### Step 1: Download MongoDB
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/1d9ebcfd-c07b-4ed5-aab7-50b1ff9c9382)
-2. It is recommended to use version 6.0.15 because I cannot install the version above it
-3. Select the Windows platform and package msi
-4. Let's download MongoDB
-5. Install MongoDB (Install MongoDB Compass)
+1. **Visit the MongoDB download page**  
+   Go to the website [MongoDB Community Download](https://www.mongodb.com/try/download/community) to download MongoDB.
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/0a17d0b8-550a-4824-af92-9f456a5e19d2)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b2417bad-a3f0-4038-8356-ac899042dc59)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/6dbb6940-994b-4cd4-ab10-6b988c7595a9)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/78a29ccf-bdb8-45a2-be84-cf0ca5beed82)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/dfcbe241-2f09-46f9-9a8c-51c1975b455a)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/53228bab-6f22-4b51-9c84-23fe9b21202c)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/8d07a266-9630-4fce-8506-04069c347aac)
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/09832091-a362-4562-a748-972b35871675)
+   ![MongoDB Download](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/1d9ebcfd-c07b-4ed5-aab7-50b1ff9c9382)
 
-7. Download MongoDB Shell on this website https://www.mongodb.com/try/download/shell
+2. **Recommended Version**  
+   It is recommended to use version 6.0.15 because newer versions may have installation issues.
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/543bff88-1bb5-437a-8814-794808804351)
+3. **Select Platform and Package**  
+   Choose the Windows platform and the MSI package.
 
-8. Adjust as in the picture above
-9. Extract the file and put it in the same folder as the MongoDB file downloaded earlier (I put MongoDB Shell in C: and MongoDB in C:\Program Files\).
-10. Open edit the system environment variable
+4. **Download MongoDB**  
+   Click to download MongoDB.
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/636e0cf1-c611-436a-8626-bce130f6882c)
+5. **Install MongoDB**  
+   Follow the installation process and make sure to install MongoDB Compass.
 
-11. Select Environment Variables
+   ![Install MongoDB Step 1](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/0a17d0b8-550a-4824-af92-9f456a5e19d2)
+   ![Install MongoDB Step 2](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b2417bad-a3f0-4038-8356-ac899042dc59)
+   ![Install MongoDB Step 3](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/6dbb6940-994b-4cd4-ab10-6b988c7595a9)
+   ![Install MongoDB Step 4](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/78a29ccf-bdb8-45a2-be84-cf0ca5beed82)
+   ![Install MongoDB Step 5](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/dfcbe241-2f09-46f9-9a8c-51c1975b455a)
+   ![Install MongoDB Step 6](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/53228bab-6f22-4b51-9c84-23fe9b21202c)
+   ![Install MongoDB Step 7](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/8d07a266-9630-4fce-8506-04069c347aac)
+   ![Install MongoDB Step 8](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/09832091-a362-4562-a748-972b35871675)
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/f1500035-3ec7-4a33-97b8-c07277885a65)
+6. **Download MongoDB Shell**  
+   Visit the [MongoDB Shell download page](https://www.mongodb.com/try/download/shell) to download the MongoDB Shell.
 
-13. Double click at path
+   ![Download MongoDB Shell](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/543bff88-1bb5-437a-8814-794808804351)
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/abda73cb-02c6-4831-89c3-ca62f5f6eb6e)
+7. **Adjust the Setup**  
+   Extract the downloaded file and place it in the same folder as the MongoDB installation. For example, place MongoDB Shell in `C:` and MongoDB in `C:\Program Files\`.
 
-14. Put the location the MongoDB Shell to path
+8. **Edit System Environment Variables**  
+   Open the system environment variables editor.
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b9193519-1730-4efe-a69d-220dd0696f9f)
+   ![Edit System Environment Variables](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/636e0cf1-c611-436a-8626-bce130f6882c)
 
-15. write mongod --version to the terminal
+9. **Select Environment Variables**  
+   Click on `Environment Variables` (System Variables section).
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b58240e2-21f5-4544-9199-609ea2db93b8)
+   ![Select Environment Variables](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/f1500035-3ec7-4a33-97b8-c07277885a65)
 
-### Step 2 Create a Database in MongoDB Compass
-1. Open MongoDB Compass
-2. Click Connect
-3. Create Database
-4. Write your name Databsase and collection
-5. Click Create Collection
+10. **Edit Path Variable**  
+    Double-click on the `Path` variable.
+
+    ![Edit Path Variable](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/abda73cb-02c6-4831-89c3-ca62f5f6eb6e)
+
+11. **Add MongoDB Path**  
+    Add the location of the MongoDB to the `Path`.
+
+    ![Add MongoDB Path](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/c5af7066-3cb2-4d4f-9799-ea2e550bada0)
+
+12. **Verify Installation**  
+    Open the terminal and type the following command to verify the installation:
+    ```sh
+    mongod --version
+    ```
+
+    ![Verify Installation](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/b58240e2-21f5-4544-9199-609ea2db93b8)
+
+### Step 2: Create a Database in MongoDB Compass
+
+1. **Open MongoDB Compass**  
+   Launch MongoDB Compass from your applications.
+
+   ![Open MongoDB Compass](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/a0689492-c5f3-4117-944e-0648e9d99e13)
+
+2. **Click Connect**  
+   Click on the `Connect` button to connect to your local MongoDB server.
+
+3. **Create Database**  
+   ![Create Database](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/667f0297-d3f7-4f13-bc2d-aabce557a8aa)
+
+4. **Enter Database Name and Collection**  
+   Write your desired database name and collection name.
+
+   ![Enter Database and Collection Name](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/ccee6e47-bb5a-421f-9eab-bf1d3bc3e40e)
+
+5. **Click Create Collection**  
+   After entering the names, click on the `Create Collection` button.
+
+6. **Database Configuration**  
+   The database name created will be saved and placed in the `.env` folder in your project. This will be explained in the next step.
 
 ### Step 3 Clone and Run The Project
 
-1. Navigate to the directory where you want to clone the project through the terminal
+1. **Navigate to the directory where you want to clone the project through the terminal**
    ```sh
     cd path/to/your/directory
     ```
-2. Clone the repository using HTTPS
+2. **Clone the repository using HTTPS**
    ```sh
     git clone https://github.com/kahfiinnn/A.K.A-FP-PSO.git
     ```
-3. Navigate into the cloned repository
+3. **Navigate into the cloned repository**
    ```sh
     cd your-repository
     ```
-4. Install dependencies
+4. **Install dependencies**
    ```sh
     npm install
-    ```
+    ```   
+By organising the steps like this, it will be easier for users to understand the cloning process and get your project up and running. Be sure to replace `your-repository` with the directory name that corresponds to your project.
 
-### Step 4 Put your Database name at .env 
-1. Open .env
-2. Put the Database name at MONGO_URL="mongodb://127.0.0.1:27017/(here)"
 
-![image](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/46718550-6f45-4591-a4ef-ff62646d1055)
+### Step 4: Put your Database name at .env 
 
-3. Run the project
+1. **Open .env**
+   
+2. **Put the database name we created in step 1 in MONGO_URL = "mongodb://127.0.0.1:27017/(here)"**
+
+   ![Edit .env](https://github.com/kahfiinnn/A.K.A-FP-PSO/assets/111292051/46718550-6f45-4591-a4ef-ff62646d1055)
+
+3. **Run the project**
+
    ```sh
-    node app.js
-    ``` 
-
-
-
-
-
+   node app.js
+    ```
 
 
 
