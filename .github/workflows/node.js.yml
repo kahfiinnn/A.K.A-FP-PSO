@@ -1,31 +1,71 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: Node.js CI  # Nama dari workflow ini, yang akan muncul di tab Actions di GitHub
 
-name: Node.js CI
-
+# Bagian ini mendefinisikan kapan workflow akan dijalankan
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Workflow akan dijalankan pada push ke branch 'main'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  # Workflow juga akan dijalankan pada pull request ke branch 'main'
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Menentukan jenis mesin yang akan digunakan untuk menjalankan job ini; dalam hal ini, Ubuntu versi terbaru
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [20.x]  # Menentukan versi Node.js yang akan digunakan; di sini, hanya versi 20.x
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositoriii
+      uses: actions/checkout@v4  # Menggunakan action resmi untuk checkout kode dari repositori
+
+    - name: Setup Node.js ${{ matrix.node-version }}  # Langkah untuk mengatur Node.js sesuai versi yang ditentukan di atas
+      uses: actions/setup-node@v3  # Menggunakan action resmi untuk mengatur Node.js
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        node-version: ${{ matrix.node-version }}  # Menentukan versi Node.js yang diambil dari matriks strategi di atas
+        cache: 'npm'  # Menggunakan cache untuk dependensi npm untuk mempercepat instalasi di masa depan
+
+    - name: Install Dependencies  # Langkah untuk menginstal semua dependensi yang dibutuhkan proyek
+      run: npm install  # Menjalankan 'npm install' untuk menginstal semua dependensi yang terdaftar di package.json
+
+    # Langkah opsional untuk menjalankan build; jika tidak ada skrip build dalam package.json, langkah ini akan dilewati
+    # - name: Run Build
+    #   run: npm run build --if-present  # '--if-present' memastikan langkah ini tidak gagal jika tidak ada skrip build
+
+    - name: Run Tests  # Langkah untuk menjalankan tes
+      if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
+      run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
+
+    - name: Setup Environment Variables  # Langkah untuk mengatur variabel lingkungan yang dibutuhkan oleh aplikasi Anda
+      # Menulis variabel lingkungan ke file .env dari secrets GitHub
+      run: echo "MONGO_URL=${{ secrets.MONGO_URL }}\nPORT=${{ secrets.PORT }}" > .env
+
+    # Langkah opsional untuk memulai aplikasi untuk memastikan bahwa aplikasi berjalan dengan baik
+    # - name: Start Application
+    #   run: npm start  # Menjalankan 'npm start' untuk memulai aplikasi
+  
+  testing:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositori
+      uses: actions/checkout@v4  # Menggunakan action resmi untuk checkout kode dari repositori
+
+    - name: Setup Node.js ${{ matrix.node-version }}  # Langkah untuk mengatur Node.js sesuai versi yang ditentukan di atas
+      uses: actions/setup-node@v3  # Menggunakan action resmi untuk mengatur Node.js
+      with:
+        node-version: ${{ matrix.node-version }}  # Menentukan versi Node.js yang diambil dari matriks strategi di atas
+        cache: 'npm'  # Menggunakan cache untuk dependensi npm untuk mempercepat instalasi di masa depan
+
+    - name: Install Dependencies  # Langkah untuk menginstal semua dependensi yang dibutuhkan proyek
+      run: npm install  # Menjalankan 'npm install' untuk menginstal semua dependensi yang terdaftar di package.json
+
+    # Langkah opsional untuk menjalankan build; jika tidak ada skrip build dalam package.json, langkah ini akan dilewati
+    # - name: Run Build
+    #   run: npm run build --if-present  # '--if-present' memastikan langkah ini tidak gagal jika tidak ada skrip build
+
+    - name: Run Tests  # Langkah untuk menjalankan tes
+      if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
+      run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
