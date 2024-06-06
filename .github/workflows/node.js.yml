@@ -47,6 +47,7 @@ jobs:
     #   run: npm start  # Menjalankan 'npm start' untuk memulai aplikasi
   
   testing:
+    runs-on: ubuntu-latest
     needs: build
     steps:
     - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositori
