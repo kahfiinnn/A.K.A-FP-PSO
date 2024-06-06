@@ -18,7 +18,7 @@ jobs:
         node-version: [20.x]  # Menentukan versi Node.js yang akan digunakan; di sini, hanya versi 20.x
 
     steps:
-    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositori
+    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositoriii
       uses: actions/checkout@v4  # Menggunakan action resmi untuk checkout kode dari repositori
 
     - name: Setup Node.js ${{ matrix.node-version }}  # Langkah untuk mengatur Node.js sesuai versi yang ditentukan di atas
