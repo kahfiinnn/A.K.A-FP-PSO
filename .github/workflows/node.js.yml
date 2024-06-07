@@ -5,10 +5,11 @@ on:
   push:
     branches:
       - main  # Workflow akan dijalankan pada push ke branch 'main'
+      - dev
   pull_request:
     branches:
       - main  # Workflow juga akan dijalankan pada pull request ke branch 'main'
-
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest  # Menentukan jenis mesin yang akan digunakan untuk menjalankan job ini; dalam hal ini, Ubuntu versi terbaru
