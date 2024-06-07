@@ -124,7 +124,7 @@ app.post("/",(req,res)=>{
             });
         }else{
             unmatchedAccount = true;
-            console.log("there is an exiting account with the same email!!!!!!");
+            console.log("there is an exiting account with the same email!!!!!!!!!");
             res.redirect("/");
         }
     }); 
