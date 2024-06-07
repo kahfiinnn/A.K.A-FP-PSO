@@ -10,7 +10,6 @@ on:
     branches:
       - main  # Workflow juga akan dijalankan pada pull request ke branch 'main'
       - dev
-
 jobs:
   build:
     runs-on: ubuntu-latest  # Menentukan jenis mesin yang akan digunakan untuk menjalankan job ini; dalam hal ini, Ubuntu versi terbaru
@@ -20,7 +19,7 @@ jobs:
         node-version: [20.x]  # Menentukan versi Node.js yang akan digunakan; di sini, hanya versi 20.x
 
     steps:
-    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositori
+    - name: Checkout Repository  # Langkah pertama untuk mengambil kode dari repositoriii
       uses: actions/checkout@v4  # Menggunakan action resmi untuk checkout kode dari repositori
 
     - name: Setup Node.js ${{ matrix.node-version }}  # Langkah untuk mengatur Node.js sesuai versi yang ditentukan di atas
@@ -32,6 +31,10 @@ jobs:
     - name: Install Dependencies  # Langkah untuk menginstal semua dependensi yang dibutuhkan proyek
       run: npm install  # Menjalankan 'npm install' untuk menginstal semua dependensi yang terdaftar di package.json
 
+    # Langkah opsional untuk menjalankan build; jika tidak ada skrip build dalam package.json, langkah ini akan dilewati
+    # - name: Run Build
+    #   run: npm run build --if-present  # '--if-present' memastikan langkah ini tidak gagal jika tidak ada skrip build
+
     - name: Run Tests  # Langkah untuk menjalankan tes
       if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
       run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
@@ -40,12 +43,10 @@ jobs:
       # Menulis variabel lingkungan ke file .env dari secrets GitHub
       run: echo "MONGO_URL=${{ secrets.MONGO_URL }}\nPORT=${{ secrets.PORT }}" > .env
 
-    - name: Build Docker Image
-      run: docker build -t pso-chat-docker .
-
-    - name: Run Docker Container
-      run: docker run --name pso-chat-docker -d -p ${{ secrets.PORT }}:4000 pso-chat-docker
-
+    # Langkah opsional untuk memulai aplikasi untuk memastikan bahwa aplikasi berjalan dengan baik
+    # - name: Start Application
+    #   run: npm start  # Menjalankan 'npm start' untuk memulai aplikasi
+  
   testing:
     runs-on: ubuntu-latest
     needs: build
@@ -62,21 +63,10 @@ jobs:
     - name: Install Dependencies  # Langkah untuk menginstal semua dependensi yang dibutuhkan proyek
       run: npm install  # Menjalankan 'npm install' untuk menginstal semua dependensi yang terdaftar di package.json
 
+    # Langkah opsional untuk menjalankan build; jika tidak ada skrip build dalam package.json, langkah ini akan dilewati
+    # - name: Run Build
+    #   run: npm run build --if-present  # '--if-present' memastikan langkah ini tidak gagal jika tidak ada skrip build
+
     - name: Run Tests  # Langkah untuk menjalankan tes
       if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
       run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
-
-    - name: Build Docker Image for Testing
-      run: docker build -t pso-chat-docker-test .
-
-    - name: Run Docker Container for Testing
-      run: docker run --name pso-chat-docker-test -d -p ${{ secrets.PORT }}:4000 pso-chat-docker-test
-
-    - name: Run Tests in Docker Container
-      run: docker exec pso-chat-docker-test npm test
-
-    - name: Stop and Remove Docker Container
-      run: |
-        docker stop pso-chat-docker-test
-        docker rm pso-chat-docker-test
-
