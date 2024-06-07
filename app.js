@@ -252,7 +252,7 @@ app.post('/deleteLostVehicle',(req,res)=>{
 // lost vehicle detial page
 app.get("/detail",(req,res)=>{
     LostVehicle.findOne({_id: detailedVehicleId}).then((index)=>{
-        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan"});
+        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan!"});
     });
     
 });
