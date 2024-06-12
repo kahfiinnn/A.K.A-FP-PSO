@@ -124,7 +124,7 @@ app.post("/",(req,res)=>{
             });
         }else{
             unmatchedAccount = true;
-            console.log("there is an exiting account with the same email!");
+            console.log("there is an exiting account with the same email!!!!!!!!!");
             res.redirect("/");
         }
     }); 
@@ -252,7 +252,7 @@ app.post('/deleteLostVehicle',(req,res)=>{
 // lost vehicle detial page
 app.get("/detail",(req,res)=>{
     LostVehicle.findOne({_id: detailedVehicleId}).then((index)=>{
-        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan!"});
+        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan"});
     });
     
 });
@@ -264,7 +264,7 @@ app.post('/detailedVehicleId',(req,res)=>{
 
 // register-page
 app.get('/register', (req,res)=>{
-    res.render('registerpage',{navbarTitle: "Buat akunn", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
+    res.render('registerpage',{navbarTitle: "Buat akun", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
     unmatchedPassword = false;
     existedEmail = false;
 });
@@ -314,3 +314,10 @@ app.get("/logout",(req,res)=>{
 app.listen(process.env.PORT,()=>{
     console.log("Running app on port 4000");
 });
+
+const server = app.listen(0, () => {
+    const port = server.address().port;
+    console.log(`Running app on port ${port}`);
+  });
+  
+  module.exports = server;
