@@ -252,7 +252,7 @@ app.post('/deleteLostVehicle',(req,res)=>{
 // lost vehicle detial page
 app.get("/detail",(req,res)=>{
     LostVehicle.findOne({_id: detailedVehicleId}).then((index)=>{
-        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan"});
+        res.render('detailpage',{index: index, navbarTitle: "Detail Laporan!"});
     });
     
 });
@@ -264,7 +264,7 @@ app.post('/detailedVehicleId',(req,res)=>{
 
 // register-page
 app.get('/register', (req,res)=>{
-    res.render('registerpage',{navbarTitle: "Buat akun", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
+    res.render('registerpage',{navbarTitle: "Buat akunn", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
     unmatchedPassword = false;
     existedEmail = false;
 });
