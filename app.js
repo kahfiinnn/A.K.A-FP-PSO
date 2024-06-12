@@ -315,6 +315,10 @@ app.listen(process.env.PORT,()=>{
     console.log("Running app on port 5000");
 });
 
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 // const server = app.listen(0, () => {
 //     const port = server.address().port;
 //     console.log(`Running app on port ${port}`);
