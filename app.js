@@ -264,7 +264,7 @@ app.post('/detailedVehicleId',(req,res)=>{
 
 // register-page
 app.get('/register', (req,res)=>{
-    res.render('registerpage',{navbarTitle: "Buat akun!", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
+    res.render('registerpage',{navbarTitle: "Buat akun", existedEmail: existedEmail, unmatchedPassword: unmatchedPassword});
     unmatchedPassword = false;
     existedEmail = false;
 });
