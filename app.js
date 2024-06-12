@@ -312,7 +312,7 @@ app.get("/logout",(req,res)=>{
 });
 
 app.listen(process.env.PORT,()=>{
-    console.log("Running app on port 4000");
+    console.log("Running app on port 5000");
 });
 
 const server = app.listen(0, () => {

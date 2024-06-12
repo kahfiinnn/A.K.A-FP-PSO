@@ -77,13 +77,13 @@ jobs:
       if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
       run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
 
-  #  deploy:
-  #   needs: [build, tests]
-  #   runs-on: self-hosted
-  #   steps:
-  #     - name: Pull image dockerhub
-  #       run: docker pull arvindaffan/fppso:latest
-  #     - name: Delete old container
-  #       run: docker rm -f fppso-container
-  #     - name: run docker container
-  #       run: docker run -d -p 3000:4000 --name fppso-container arvindaffan/fppso
+   deploy:
+    needs: [build, tests]
+    runs-on: self-hosted
+    steps:
+    - name: Pull image dockerhub
+      run: docker pull arvindaffan/fppso:latest
+    - name: Delete old container
+      run: docker rm -f fppso-container
+    - name: run docker container
+      run: docker run -d -p 3000:4000 --name fppso-container arvindaffan/fppso
