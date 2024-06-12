@@ -311,9 +311,9 @@ app.get("/logout",(req,res)=>{
       });
 });
 
-app.listen(process.env.PORT,()=>{
-    console.log("Running app on port 5000");
-});
+// app.listen(process.env.PORT,()=>{
+//     console.log("Running app on port 5000");
+// });
 
 const PORT = 3000;
 app.listen(PORT, () => {
