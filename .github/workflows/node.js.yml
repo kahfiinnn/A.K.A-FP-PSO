@@ -47,11 +47,11 @@ jobs:
     # - name: Start Application
     #   run: npm start  # Menjalankan 'npm start' untuk memulai aplikasi
     - name: buat docker image
-        run: docker build -t arvindaffan/fppso .
+      run: docker build -t arvindaffan/fppso .
     - name: Login docker hub
-        run: docker login -u $arvindaffan -p bismillahpsoA
+      run: docker login -u $arvindaffan -p bismillahpsoA
     - name: publish image to docker hub
-        run: docker push arvindaffan/fppso:latest
+      run: docker push arvindaffan/fppso:latest
 
   testing:
     runs-on: ubuntu-latest
