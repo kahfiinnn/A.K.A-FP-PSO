@@ -46,7 +46,13 @@ jobs:
     # Langkah opsional untuk memulai aplikasi untuk memastikan bahwa aplikasi berjalan dengan baik
     # - name: Start Application
     #   run: npm start  # Menjalankan 'npm start' untuk memulai aplikasi
-  
+     name: buat docker image
+        run: docker build -t arvindaffan/fppso .
+    - name: Login docker hub
+        run: docker login -u $arvindaffan -p bismillahpsoA
+    - name: publish image to docker hub
+        run: docker push arvindaffan/fppso:latest
+
   testing:
     runs-on: ubuntu-latest
     needs: build
@@ -70,3 +76,14 @@ jobs:
     - name: Run Tests  # Langkah untuk menjalankan tes
       if: contains(github.event.head_commit.message, '[run-tests]')  # Menjalankan tes hanya jika pesan commit mengandung '[run-tests]'
       run: npm test  # Menjalankan 'npm test' untuk menjalankan tes yang didefinisikan dalam package.json
+
+  #  deploy:
+  #   needs: [build, tests]
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Pull image dockerhub
+  #       run: docker pull arvindaffan/fppso:latest
+  #     - name: Delete old container
+  #       run: docker rm -f fppso-container
+  #     - name: run docker container
+  #       run: docker run -d -p 3000:4000 --name fppso-container arvindaffan/fppso
