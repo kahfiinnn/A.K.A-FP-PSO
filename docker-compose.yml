@@ -4,4 +4,4 @@ services:
   app:
     build: .
     ports:
-      - '3000:4000' #mapping port [port host:port docker(dapet dari expose)]
+      - '3000:3000' #mapping port [port host:port docker(dapet dari expose)]
