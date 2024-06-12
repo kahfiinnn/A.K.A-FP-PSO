@@ -78,4 +78,4 @@ jobs:
         run: docker rm -f fppso-container
 
       - name: Run Docker Container
-        run: docker run -d -p 3000:4000 --name fppso-container arvindaffan/fppso
+        run: docker run -d -p 3000:3000 --name fppso-container arvindaffan/fppso

@@ -315,9 +315,9 @@ app.listen(process.env.PORT,()=>{
     console.log("Running app on port 5000");
 });
 
-const server = app.listen(0, () => {
-    const port = server.address().port;
-    console.log(`Running app on port ${port}`);
-  });
+// const server = app.listen(0, () => {
+//     const port = server.address().port;
+//     console.log(`Running app on port ${port}`);
+//   });
   
-  module.exports = server;
+//   module.exports = server;
