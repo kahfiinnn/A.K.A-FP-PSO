@@ -47,6 +47,9 @@ jobs:
       - name: Init Terraform
         run: terraform init
 
+      - name: Set Environment Variables
+        run: export TF_VAR_private_key_path="C:/Users/HP/Downloads/ec2-1(1).pem"
+
       - name: Apply Terraform
         run: terraform apply -auto-approve
 
