@@ -41,6 +41,12 @@ jobs:
       - name: Setup Environment Variables
         run: echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
 
+      - name: Create PEM file
+        run: echo "${{ secrets.EC2_KEY }}" > ~/ec2-key.pem
+
+      - name: Set Permissions for PEM file
+        run: chmod 600 ~/ec2-key.pem
+
       - name: Check Terraform Version
         run: terraform --version
 
