@@ -38,6 +38,15 @@ jobs:
       - name: Setup Environment Variables
         run: echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
 
+      - name: Check Terraform Version
+        run: terraform --version-*
+
+      - name: Init Terraform
+        run: terraform init
+
+      - name: Apply Terraform
+        run: terraform apply -auto-approve
+
       - name: Build Docker Image
         run: docker build -t arvindaffan/fppso .
 
