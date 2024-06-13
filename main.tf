@@ -21,7 +21,7 @@ resource "aws_instance" "my_ec2_instance" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file("C:/Users/HP/Downloads/ec2-1(1).pem")
+      private_key = file("ec2-1(1).pem")
       host        = aws_instance.my_ec2_instance.public_ip
     }
   }
