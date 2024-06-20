@@ -35,29 +35,14 @@ jobs:
         if: contains(github.event.head_commit.message, '[run-tests]')
         run: npm test
 
-      # - name: Add database
-      #   run: echo "MONGO_URL=${{ secrets.MONGO_URL }} >> .env"
-
       - name: Setup Environment Variables
         run: echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
-
-      # - name: Check Terraform Version
-      #   run: terraform --version
-
-      # - name: Init Terraform
-      #   run: terraform init
-
-      # - name: Set Environment Variables
-      #   run: export TF_VAR_private_key_path="C:/Users/HP/Downloads/ec2-1(1).pem"
-
-      # - name: Apply Terraform
-      #   run: terraform apply -auto-approve
 
       - name: Build Docker Image
         run: docker build -t arvindaffan/fppso .
 
       - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Publish Image to Docker Hub
         run: docker push arvindaffan/fppso:latest
@@ -89,11 +74,11 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
 
-     - name: Setup Terraform
+      - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-         terraform_version: 1.8.5
-         terraform_wrapper: false
+          terraform_version: 1.8.5
+          terraform_wrapper: false
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -158,4 +143,3 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i ssh_private_key.pem ubuntu@${{ env.INSTANCE_IP }} '
             sudo docker run -d -p 3000:3000 --name fppso-container arvindaffan/fppso
           '
-
