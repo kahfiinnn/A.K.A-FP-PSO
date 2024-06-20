@@ -126,20 +126,21 @@ jobs:
           echo "::set-output name=ssh_private_key::ssh_private_key.pem"
           echo "$SSH_PRIVATE_KEY"
 
-      - name: Pull Docker Image from Docker Hub
+      - name: Push Docker Image to EC2 Instance
+        shell: /usr/bin/bash -e {0}
+        env:
+          AWS_REGION: ap-southeast-1
+          TF_VAR_access_key: ${{ secrets.TF_USER_AWS_KEY }}
+          TF_VAR_secret_key: ${{ secrets.TF_USER_AWS_SECRET }}
+          INSTANCE_IP: ${{ env.INSTANCE_IP }}
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh_private_key.pem ubuntu@${{ env.INSTANCE_IP }} '
-            sudo docker pull arvindaffan/fppso:latest
-          '
-
-      - name: Delete old Docker Container
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ssh_private_key.pem ubuntu@${{ env.INSTANCE_IP }} '
-            sudo docker rm -f fppso-container || true
-          '
-
-      - name: Run Docker Container
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ssh_private_key.pem ubuntu@${{ env.INSTANCE_IP }} '
-            sudo docker run -d -p 3000:3000 --name fppso-container arvindaffan/fppso
-          '
+            sudo apt-get update
+            sudo apt-get install -y docker.io
+            sudo systemctl start docker
+            sudo systemctl enable docker
+            sudo usermod -aG docker ubuntu
+            sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/fppso:latest
+            sudo docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/fppso:latest
+            '
