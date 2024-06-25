@@ -71,7 +71,7 @@ resource "aws_instance" "public_instance" {
   vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
 
   tags = {
-    Name = "instance_terraform_2"
+    Name = "fppsoaka"
   }
 }
 
