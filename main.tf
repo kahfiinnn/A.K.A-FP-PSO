@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "us-east-2"
   access_key = "AKIATCKAM4MOBQFVS6XK"
   secret_key = "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"
 }
@@ -65,8 +65,8 @@ resource "aws_security_group" "allow_http_ssh" {
 }
 
 resource "aws_instance" "public_instance" {
-  ami = "ami-0be48b687295f8bd6"
-  instance_type = "t3.micro"
+  ami = "ami-07d7e3e669718ab45"
+  instance_type = "t2.micro"
   key_name = aws_key_pair.service_key_pair.key_name
   vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
 
