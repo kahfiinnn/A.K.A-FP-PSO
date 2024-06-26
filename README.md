@@ -38,7 +38,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>About The Project
+    <li>Regarding the Project
         <ul>
         <li>Built With</li>
       </ul>
@@ -75,7 +75,7 @@ A useful application for finding lost vehicles. We will do DevOps on this applic
 
 <!-- GETTING STARTED -->
 
-## steps to start
+## Steps to Start
 
 Prepare a project that DevOps wants to do further.
 
