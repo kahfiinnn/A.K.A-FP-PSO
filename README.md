@@ -173,17 +173,13 @@ Prepare a project that DevOps wants to do further.
 
 ### Step 3 Clone and Run The Project
 
-1. **Navigate to the directory where you want to clone the project through the terminal**
-   ```sh
-    cd path/to/your/directory
-    ```
-2. **Clone the repository using HTTPS**
+1. **Clone the repository using HTTPS**
    ```sh
     git clone https://github.com/kahfiinnn/A.K.A-FP-PSO.git
     ```
-3. **Navigate into the cloned repository**
+2. **Navigate into the cloned repository**
    ```sh
-    cd your-repository
+    cd A.K.A-FP-PSO
     ```
 4. **Install dependencies**
    ```sh
