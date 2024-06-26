@@ -75,7 +75,7 @@ A useful application for finding lost vehicles. We will do DevOps on this applic
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## steps to start
 
 Prepare a project that DevOps wants to do further.
 
