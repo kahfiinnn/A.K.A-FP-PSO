@@ -63,8 +63,6 @@ A useful application for finding lost vehicles. We will do DevOps on this applic
     <li><a href="https://github.com/kahfiinnn">Kahfin</a></li>
 </ul>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 -   [![Express.js][Express.js]][Express.js-url]
@@ -74,8 +72,6 @@ A useful application for finding lost vehicles. We will do DevOps on this applic
 -   [![AWS][AWS.com]][AWS-url]
 -   [![SOOS][SOOS.com]][SOOS-url]
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -204,8 +200,6 @@ By organising the steps like this, it will be easier for users to understand the
 
 ## Github Action
 ## Docker
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
