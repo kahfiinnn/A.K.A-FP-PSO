@@ -198,8 +198,69 @@ By organising the steps like this, it will be easier for users to understand the
    node app.js
     ```
 
-## Github Action
-## Docker
+### What You Need to Prepare
+
+- #### Docker
+    Visit Docker installation here : https://www.docker.com/products/docker-hub/
+
+- #### Terraform (Server Infrastructure)
+    Visit Terraform installation here : https://developer.hashicorp.com/terraform/install
+
+- ### SOOS DAST Scan
+    Visit SOOS DAST Scan add tools here :  https://soos.io/
+    To use this action, perform the following steps:
+
+     1. Create an account on https://app.soos.io. SOOS offers a free 30 day trial for our SCA, DAST, and SBOM products.
+
+     2. Navigate to the "Integrate" page in the SOOS app (https://app.soos.io/integrate/dast/). Note the "API Credentials" section of this page; the keys you will need for the next step are here.
+    
+     3. Set up your SOOS API Key and SOOS Client Id as Github Secrets named SOOS_API_KEY and SOOS_CLIENT_ID.
+
+     4. (Optional) If you'd like to upload SARIF results of DAST scans to GitHub, set SOOS_GITHUB_PAT with your Github Personal Access Token.
+  
+### Setup
+
+_After donwloading all prequities, you can follow this setup steps:_
+
+#### [Docker](https://docs.docker.com/?_gl=1*1c6kr47*_gcl_au*MTA3NjkzNTEyNC4xNzE2OTc4MTE0*_ga*MjAzODQ3MzkxMC4xNzE2OTU3MDUw*_ga_XJWPQMJYHQ*MTcxOTM4ODY3My4yNC4xLjE3MTkzODg2NzMuNjAuMC4w)
+
+Docker is use to containerized our development environtment. In this project docker will reads docker-compose.yml and dockerfiles files.
+
+-   ##### [docker-compose.yml](https://github.com/laodeshaldanfalih/docker-trinity-app/blob/main/docker-compose.yml)
+    This file is use for configuring every image that we need to run our application. In this project we use every image to support laravel development such as nginx, mysql, phpmyadmin, etc.
+-   ##### [dockerfiles](https://github.com/laodeshaldanfalih/docker-trinity-app/tree/main/dockerfiles)
+    This files are use for configuring every image that have been installed. In this project we assign every image to the user and group so that it can be accessed in the server
+
+
+1. Open the terminal and go to the clone directory
+    ```sh
+    cd docker-A.K.A-FP-PSO
+    ```
+2. Make .env file automatically from .env.example
+    ```sh
+    cp .env.example .env
+    ```
+3. Innitialize laravel project
+    ```sh
+    docker compose run 
+    ```
+4. Innitialize laravel key
+    ```sh
+    docker compose run 
+    ```
+5. Innitialize laravel migration
+    ```sh
+    docker compose run 
+    ```
+6. Innitialize docker images (start program)
+    ```sh
+    docker compose up -d
+    ```
+7. Stop docker images (stop program)
+    ```sh
+    docker compose down
+    ```
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
