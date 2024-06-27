@@ -277,6 +277,15 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 
+## Contact
+
+### Arvin - 5026211014@student.its.ac.id
+
+### Avicenna - 5026211015@student.its.ac.id
+
+### Kahfin - 502621165@student.its.ac.id
+
+Project Link: [https://github.com/kahfiinnn/A.K.A-FP-PSO]
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
