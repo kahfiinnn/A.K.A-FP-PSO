@@ -231,38 +231,22 @@ Docker is use to containerized our development environtment. In this project doc
 -   ##### [dockerfiles](https://github.com/laodeshaldanfalih/docker-trinity-app/tree/main/dockerfiles)
     This files are use for configuring every image that have been installed. In this project we assign every image to the user and group so that it can be accessed in the server
 
+#### [Terraform](https://www.terraform.io/)
+Terraform is use to provisioning our infrastucture as code. In this project, terraform will read main.tf.
 
-1. Open the terminal and go to the clone directory
+1. Init Terraform
     ```sh
-    cd docker-A.K.A-FP-PSO
+    terraform init
     ```
-2. Make .env file automatically from .env.example
+2. Check that nothing error
     ```sh
-    cp .env.example .env
+    terraform plan
     ```
-3. Innitialize laravel project
+3. Connect with AWS
     ```sh
-    docker compose run 
+    terraform apply
     ```
-4. Innitialize laravel key
-    ```sh
-    docker compose run 
-    ```
-5. Innitialize laravel migration
-    ```sh
-    docker compose run 
-    ```
-6. Innitialize docker images (start program)
-    ```sh
-    docker compose up -d
-    ```
-7. Stop docker images (stop program)
-    ```sh
-    docker compose down
-    ```
-
-
-
+    
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
